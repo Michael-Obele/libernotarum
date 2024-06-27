@@ -19,3 +19,44 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+bun.lockb
+bun.*
+
+#For diffs
+diff_file.txt
+diff.txt
+
+dev.db
+
+#In House Test Code
+Untitled.*
+Untitled-*.*
+
+# Node.js files
+.yarn/cache/
+.pnp/
+
+# Build artifacts
+public/build/
+
+# Environment variables
+.env*
+
+# Editor temporary files
+# Adjust these based on your editor
+.vscode/
+.idea/
+
+# Test coverage reports
+coverage/
+
+# Temporary files created by Bun (if using Bun)
+__bun_temp/
+
+# Local Netlify folder
+.netlify
+
+# Sentry Config File
+.sentryclirc
+.vercel
