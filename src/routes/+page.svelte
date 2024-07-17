@@ -1,4 +1,6 @@
 <script>
+	import Footer from './Footer.svelte';
+
 	import TextSection from './TextSection.svelte';
 	import Logo from '$lib/logos/Logo.svelte';
 	import LogoLong from '$lib/logos/Logo-Long.svelte';
@@ -89,7 +91,7 @@
 			<h2 class="text-2xl font-bold text-accent1-light md:text-3xl">
 				Your Digital Workspace for Creative Note-Taking
 			</h2>
-			<p class="text-accent1-light md:text-xl">
+			<p class="md:text-xl">
 				Explore a creative, efficient note-taking ecosystem with evolving tools tailored to your
 				needs. Experience open-source software freely and without limits.
 			</p>
@@ -108,7 +110,9 @@
 		</TextSection>
 
 		<section>
-			<h2 class="text-2xl font-bold lowercase text-gray-100 dark:text-gray-200">related words</h2>
+			<h2 class="text-2xl font-bold lowercase text-accent1-light dark:text-gray-200 md:text-3xl">
+				related words
+			</h2>
 			<ul
 				class="mt-4 grid list-disc grid-cols-3 gap-x-5 gap-y-3 pl-6 capitalize text-gray-100 dark:text-gray-200"
 			>
@@ -137,10 +141,9 @@
 		</TextSection>
 
 		<TextSection title="history">
-			Launched in 2024, Liber Notarum began with the goal of enhancing digital note-taking. Inspired
-			by the open-source community, it has quickly grown to be a trusted tool for individuals and
-			organizations alike, providing an exceptional note-taking experience across various industries
-			and use cases.
+			Liber Notarum, launched in 2024, aims to revolutionize digital note-taking for individuals
+			with ADHD or those seeking to manage tasks and notes effortlessly. Inspired by the open-source
+			community, the platform is designed to reduce stress and enhance productivity.
 		</TextSection>
 
 		<TextSection title="future plans">
@@ -171,19 +174,7 @@
 	</div>
 </main>
 
-<footer class="bg-secondary-light p-6 text-center">
-	<!-- <div>
-		<a href="https://twitter.com/libernotarum" class="mx-2 inline-block">Twitter</a>
-		<a href="https://facebook.com/libernotarum" class="mx-2 inline-block">Facebook</a>
-		<a href="https://instagram.com/libernotarum" class="mx-2 inline-block">Instagram</a>
-	</div>
-	<div class="mt-4">
-		<a href="#" class="mx-2 inline-block">Privacy Policy</a>
-		<a href="#" class="mx-2 inline-block">Terms of Service</a>
-		<a href="#" class="mx-2 inline-block">Contact Us</a>
-	</div> -->
-	<p class="mt-4">&copy; 2024 Liber Notarum. All rights reserved.</p>
-</footer>
+<Footer />
 
 <style>
 </style>
