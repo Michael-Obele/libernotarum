@@ -37,21 +37,17 @@
 	</span>
 </div>
 
-<header class="bg-primary-light p-6 font-semibold text-secondary-light">
-	<h1 class="text-4xl">
-		Liber Notarum
-		<span class="text-2xl text-accent1-light">
-			<span class="text-nowrap font-mono font-bold">/ˈli:bər noʊˈtɑ:rəm/</span>
-		</span>
-	</h1>
-	<p class="text-lg capitalize">Note-taking, reimagined.</p>
+<header class="bg-primary-light p-6 text-center font-semibold text-secondary-light lg:hidden">
+	<h3 class="text-4xl">Coming Soon!</h3>
 </header>
 
 <main class="relative flex flex-row bg-gray-900 p-6 text-white dark:bg-gray-600">
 	<div class="max-w-2xl px-10">
 		<section class="my-6 space-y-5 leading-8">
+			<h1 class="text-4xl">Liber Notarum</h1>
+			<p class="text-lg capitalize">Note-taking, reimagined.</p>
 			<h2 class="font-mono text-2xl text-accent1-light md:text-3xl">
-				<span class="text-nowrap font-bold">/ˈli:bər noʊˈtɑ:rəm/</span>
+				<span class="text-nowrap font-bold tracking-tighter">/ˈli:bər noʊˈtɑ:rəm/</span>
 			</h2>
 
 			<div class="p-6 text-xl dark:text-gray-300">
@@ -167,7 +163,7 @@
 		>
 		</section> -->
 	</div>
-	<div class="sticky right-16 top-0 ml-[20vw] mt-[10vh] size-fit pt-[10rem]">
+	<div class="sticky right-16 top-0 ml-[20vw] mt-[10vh] hidden size-fit pt-[10rem] lg:block">
 		<div class="mb-20 size-24">
 			<ComingSoonV1 />
 		</div>
