@@ -2,6 +2,26 @@
 	import TextSection from './TextSection.svelte';
 	import Logo from '$lib/logos/Logo.svelte';
 	import LogoLong from '$lib/logos/Logo-Long.svelte';
+	import ComingSoonV1 from '$lib/img/Coming Soon 1.svelte';
+	import ComingSoon from '$lib/img/Coming Soon.svelte';
+
+	const relatedWords = [
+		'note-taking',
+		'organization',
+		'collaboration',
+		'productivity',
+		'markdown',
+		'templates',
+		'security',
+		'cross-platform',
+		'digital notebook',
+		'knowledge management',
+		'open-source',
+		'clean interface',
+		'robust security',
+		'seamless collaboration',
+		'customizable notes'
+	];
 </script>
 
 <svelte:head>
@@ -20,36 +40,66 @@
 <header class="bg-primary-light p-6 font-semibold text-secondary-light">
 	<h1 class="text-4xl">
 		Liber Notarum
-		<span class="font-mono text-2xl text-accent1-light">
-			<span class="text-nowrap font-bold">\ˈliːbər noʊˈtɑːrəm\</span>
+		<span class="text-2xl text-accent1-light">
+			<span class="text-nowrap font-mono font-bold">/ˈli:bər noʊˈtɑ:rəm/</span>
 		</span>
 	</h1>
-	<p class="text-lg">Note-taking, reimagined.</p>
+	<p class="text-lg capitalize">Note-taking, reimagined.</p>
 </header>
 
-<main class="bg-gray-900 p-6 dark:bg-gray-600">
+<main class="relative flex flex-row bg-gray-900 p-6 text-white dark:bg-gray-600">
 	<div class="max-w-2xl px-10">
-		<section class="my-6">
-			<span class="font-mono text-2xl text-accent1-light">
-				<span class="text-nowrap font-bold">\ˈliːbər noʊˈtɑːrəm\</span>
-			</span>
-			<p class="text-accent1-light">
-				The Latin term "Liber Notarum" translates to "Book of Notes," representing a digital
-				notebook for capturing, organizing, and sharing knowledge.
-			</p>
+		<section class="my-6 space-y-5 leading-8">
+			<h2 class="font-mono text-2xl text-accent1-light md:text-3xl">
+				<span class="text-nowrap font-bold">/ˈli:bər noʊˈtɑ:rəm/</span>
+			</h2>
+
+			<div class="p-6 text-xl dark:text-gray-300">
+				<ol class="dark:list-decimal-dark list-decimal space-y-2">
+					<li class="mb-4 dark:mb-2">
+						The Latin term <strong class="text-yellow-400 dark:text-yellow-300"
+							>"Liber Notarum"</strong
+						>
+						translates to <span class="text-yellow-400 dark:text-yellow-300">"Book of Notes"</span>,
+						representing a digital notebook for capturing, organizing, and sharing knowledge.
+					</li>
+					<li class="mb-4 dark:mb-2">
+						Open-source digital notebook for modern note-taking.
+						<ul class="dark:list-disc-dark list-disc space-y-2 pl-8">
+							<li>
+								A constantly evolving project providing powerful <span
+									class="text-yellow-400 dark:text-yellow-300">note-taking capabilities</span
+								> with an intuitive interface.
+							</li>
+							<li>Available completely free and without attribution.</li>
+							<li>
+								Provides features like <span class="text-yellow-400 dark:text-yellow-300"
+									>Markdown support</span
+								>, <span class="text-yellow-400 dark:text-yellow-300">note templates</span>, and
+								<span class="text-yellow-400 dark:text-yellow-300">task management</span>.
+							</li>
+							<li>
+								Ensures robust <span class="text-yellow-400 dark:text-yellow-300">security</span>
+								and seamless
+								<span class="text-yellow-400 dark:text-yellow-300">collaboration</span>.
+							</li>
+						</ul>
+					</li>
+				</ol>
+			</div>
 		</section>
 
-		<section class="my-6">
-			<h2 class="text-2xl font-bold text-accent1-light">
-				Open-source digital notebook for modern note-taking.
+		<section class="my-6 space-y-5 leading-8">
+			<h2 class="text-2xl font-bold text-accent1-light md:text-3xl">
+				Your Digital Workspace for Creative Note-Taking
 			</h2>
-			<p class="text-accent1-light">
-				A constantly evolving project providing powerful note-taking capabilities with an intuitive
-				interface, available completely free and without attribution.
+			<p class="text-accent1-light md:text-xl">
+				Explore a creative, efficient note-taking ecosystem with evolving tools tailored to your
+				needs. Experience open-source software freely and without limits.
 			</p>
 			<!-- <a
 			href="/signup"
-			class="mt-4 inline-block rounded bg-red-600 px-4 py-2 text-white hover:bg-red-700 dark:bg-red-400 dark:hover:bg-red-500"
+			class="mt-4 inline-block rounded bg-red-600 px-4 py-2 hover:bg-red-700 dark:bg-red-400 dark:hover:bg-red-500"
 			>Sign up now</a
 		> -->
 		</section>
@@ -61,10 +111,16 @@
 			device, ensuring productivity on the go.
 		</TextSection>
 
-		<TextSection title="related words">
-			Note-taking, Organization, Collaboration, Productivity, Markdown, Templates, Security,
-			Cross-Platform, Digital Notebook, Knowledge Management
-		</TextSection>
+		<section>
+			<h2 class="text-2xl font-bold lowercase text-gray-100 dark:text-gray-200">related words</h2>
+			<ul
+				class="mt-4 grid list-disc grid-cols-3 gap-x-5 gap-y-3 pl-6 capitalize text-gray-100 dark:text-gray-200"
+			>
+				{#each relatedWords as word}
+					<li>{word}</li>
+				{/each}
+			</ul>
+		</section>
 
 		<TextSection title="technology">
 			Utilize a digital notebook that scales with your needs, offering a smooth user experience and
@@ -106,14 +162,20 @@
 			</p>
 			<a
 			href="/signup"
-			class="mt-4 inline-block rounded bg-red-600 px-4 py-2 text-white hover:bg-red-700 dark:bg-red-400 dark:hover:bg-red-500"
+			class="mt-4 inline-block rounded bg-red-600 px-4 py-2 hover:bg-red-700 dark:bg-red-400 dark:hover:bg-red-500"
 			>Sign up now</a
 		>
 		</section> -->
 	</div>
+	<div class="sticky right-16 top-0 ml-[20vw] mt-[10vh] size-fit pt-[10rem]">
+		<div class="mb-20 size-24">
+			<ComingSoonV1 />
+		</div>
+		<h3 class="mt-32 text-3xl font-semibold tracking-tight">Coming Soon!</h3>
+	</div>
 </main>
 
-<footer class="bg-secondary-light p-6 text-center text-white">
+<footer class="bg-secondary-light p-6 text-center">
 	<!-- <div>
 		<a href="https://twitter.com/libernotarum" class="mx-2 inline-block">Twitter</a>
 		<a href="https://facebook.com/libernotarum" class="mx-2 inline-block">Facebook</a>
