@@ -1,5 +1,7 @@
 <script>
-	import Logo from './Logo.svelte';
+	import TextSection from './TextSection.svelte';
+	import Logo from '$lib/logos/Logo.svelte';
+	import LogoLong from '$lib/logos/Logo-Long.svelte';
 </script>
 
 <svelte:head>
@@ -7,104 +9,108 @@
 </svelte:head>
 
 <div class="mx-auto w-fit pb-5 pt-10">
-	<Logo />
+	<span class="md:hidden">
+		<Logo />
+	</span>
+	<span class="hidden md:block">
+		<LogoLong />
+	</span>
 </div>
 
-<header class="bg-primary-light text-secondary-light p-6">
+<header class="bg-primary-light p-6 font-semibold text-secondary-light">
 	<h1 class="text-4xl">
 		Liber Notarum
-		<span class="text-accent1-light font-mono">
-			\<span class="font-bold">ˈliːbər noʊˈtɑːrəm</span>\
+		<span class="font-mono text-2xl text-accent1-light">
+			<span class="text-nowrap font-bold">\ˈliːbər noʊˈtɑːrəm\</span>
 		</span>
 	</h1>
 	<p class="text-lg">Note-taking, reimagined.</p>
 </header>
 
 <main class="bg-gray-900 p-6 dark:bg-gray-600">
-	<section class="my-6">
-		<p class="font-mono text-2xl text-red-600 dark:text-red-600">
-			\<span class="font-bold">ˈliːbər noʊˈtɑːrəm</span>\
-		</p>
-		<p class="text-red-600 dark:text-red-600">
-			The Latin term "Liber Notarum" translates to "Book of Notes," representing a digital notebook
-			for capturing, organizing, and sharing knowledge.
-		</p>
-	</section>
+	<div class="max-w-2xl px-10">
+		<section class="my-6">
+			<span class="font-mono text-2xl text-accent1-light">
+				<span class="text-nowrap font-bold">\ˈliːbər noʊˈtɑːrəm\</span>
+			</span>
+			<p class="text-accent1-light">
+				The Latin term "Liber Notarum" translates to "Book of Notes," representing a digital
+				notebook for capturing, organizing, and sharing knowledge.
+			</p>
+		</section>
 
-	<section class="my-6">
-		<h2 class="text-2xl font-bold text-red-600 dark:text-red-600">
-			Open-source digital notebook for modern note-taking.
-		</h2>
-		<p class="text-red-600 dark:text-red-600">
-			A constantly evolving project providing powerful note-taking capabilities with an intuitive
-			interface, available completely free and without attribution.
-		</p>
-		<!-- <a
+		<section class="my-6">
+			<h2 class="text-2xl font-bold text-accent1-light">
+				Open-source digital notebook for modern note-taking.
+			</h2>
+			<p class="text-accent1-light">
+				A constantly evolving project providing powerful note-taking capabilities with an intuitive
+				interface, available completely free and without attribution.
+			</p>
+			<!-- <a
 			href="/signup"
 			class="mt-4 inline-block rounded bg-red-600 px-4 py-2 text-white hover:bg-red-700 dark:bg-red-400 dark:hover:bg-red-500"
 			>Sign up now</a
 		> -->
-	</section>
+		</section>
 
-	<section class="my-6">
-		<h2 class="text-2xl font-bold text-gray-100 dark:text-gray-200">synopsis</h2>
-		<p class="text-gray-300 dark:text-gray-700">
+		<TextSection title={'synopsis'}>
 			Capture, organize, and share your thoughts, ideas, and knowledge with ease. Liber Notarum
 			offers a clean, intuitive interface, robust security, and seamless collaboration. Customize
 			your notes with Markdown support, templates, and task management. Access your notes from any
 			device, ensuring productivity on the go.
-		</p>
-	</section>
+		</TextSection>
 
-	<section class="my-6">
-		<h2 class="text-2xl font-bold text-gray-100 dark:text-gray-200">related words</h2>
-		<p class="text-gray-300 dark:text-gray-700">
+		<TextSection title="related words">
 			Note-taking, Organization, Collaboration, Productivity, Markdown, Templates, Security,
 			Cross-Platform, Digital Notebook, Knowledge Management
-		</p>
-	</section>
+		</TextSection>
 
-	<section class="my-6">
-		<h2 class="text-2xl font-bold text-gray-100 dark:text-gray-200">technology</h2>
-		<p class="text-gray-300 dark:text-gray-700">
+		<TextSection title="technology">
 			Utilize a digital notebook that scales with your needs, offering a smooth user experience and
 			future-proof features. With minimalistic design and powerful functionality, Liber Notarum
 			ensures your notes are always accessible, secure, and well-organized.
-		</p>
-	</section>
+		</TextSection>
 
-	<section class="my-6">
-		<h2 class="text-2xl font-bold text-gray-100 dark:text-gray-200">style</h2>
-		<p class="text-gray-300 dark:text-gray-700">
+		<TextSection title="style">
 			Enjoy a clean, minimalist design with customizable colors and layouts. Combine and modify
 			elements to create a personalized note-taking experience that balances simplicity and
 			sophistication.
-		</p>
-	</section>
+		</TextSection>
 
-	<section class="my-6">
-		<h2 class="text-2xl font-bold text-gray-100 dark:text-gray-200">open-source license</h2>
-		<p class="text-gray-300 dark:text-gray-700">
+		<TextSection title="open-source license">
 			Liber Notarum is completely free for personal and commercial use, with no attribution
 			required. Embrace the freedom to use, modify, and share without restrictions. Just don’t
 			replicate or redistribute the platform as your own.
-		</p>
-	</section>
+		</TextSection>
 
-	<section class="my-6">
-		<h2 class="text-2xl font-bold text-gray-100 dark:text-gray-200">history</h2>
-		<p class="text-gray-300 dark:text-gray-700">
+		<TextSection title="history">
 			Launched in 2024, Liber Notarum began with the goal of enhancing digital note-taking. Inspired
 			by the open-source community, it has quickly grown to be a trusted tool for individuals and
 			organizations alike, providing an exceptional note-taking experience across various industries
 			and use cases.
-		</p>
-		<!-- <a
+		</TextSection>
+
+		<TextSection title="future plans">
+			Liber Notarum is a constantly evolving project, with plans to expand its capabilities and
+			enhance the user experience. Stay tuned for updates and new features to come.
+		</TextSection>
+
+		<!-- <section class="my-6 space-y-5">
+			<h2 class="text-2xl font-bold leading-8 text-gray-100 dark:text-gray-200">history</h2>
+			<p class="leading-8 text-gray-300 dark:text-gray-700">
+				Launched in 2024, Liber Notarum began with the goal of enhancing digital note-taking.
+				Inspired by the open-source community, it has quickly grown to be a trusted tool for
+				individuals and organizations alike, providing an exceptional note-taking experience across
+				various industries and use cases.
+			</p>
+			<a
 			href="/signup"
 			class="mt-4 inline-block rounded bg-red-600 px-4 py-2 text-white hover:bg-red-700 dark:bg-red-400 dark:hover:bg-red-500"
 			>Sign up now</a
-		> -->
-	</section>
+		>
+		</section> -->
+	</div>
 </main>
 
 <footer class="bg-secondary-light p-6 text-center text-white">
@@ -120,3 +126,6 @@
 	</div> -->
 	<p class="mt-4">&copy; 2024 Liber Notarum. All rights reserved.</p>
 </footer>
+
+<style>
+</style>
