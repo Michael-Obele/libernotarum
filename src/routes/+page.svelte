@@ -4,7 +4,8 @@
 	import TextSection from './TextSection.svelte';
 	import Logo from '$lib/logos/Logo.svelte';
 	import LogoLong from '$lib/logos/Logo-Long.svelte';
-	import ComingSoonV1 from '$lib/img/Coming Soon 1.svelte';
+	// import ComingSoonV1 from '$lib/img/Coming Soon 1.svelte';
+	import ComingSoonV1 from '$lib/img/Coming Soon 1.png';
 	import ComingSoon from '$lib/img/Coming Soon.svelte';
 
 	const relatedWords = [
@@ -166,11 +167,11 @@
 		>
 		</section> -->
 	</div>
-	<div class="sticky right-16 top-0 ml-[20vw] mt-[10vh] hidden size-fit pt-[10rem] lg:block">
-		<div class="mb-20 size-24">
-			<ComingSoonV1 />
+	<div class="sticky right-16 top-0 ml-[20vw] mt-[5vh] hidden size-fit pt-[10rem] lg:block">
+		<div class="mb-2 size-96">
+			<img src={ComingSoonV1} alt="Coming Soon" />
 		</div>
-		<h3 class="mt-32 text-3xl font-semibold tracking-tight">Coming Soon!</h3>
+		<h3 class="text-center text-3xl font-semibold tracking-tight">Coming Soon!</h3>
 	</div>
 </main>
 

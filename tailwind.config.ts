@@ -6,14 +6,19 @@ const config: Config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	safelist: ['dark'],
 	theme: {
+
 		container: {
 			center: true,
 			padding: '2rem',
 			screens: {
-				'2xl': '1400px'
+				'2xl': '1400px',
 			}
 		},
 		extend: {
+			screens: {
+				'2xl': '1400px',
+				'xs': '420px'
+			},
 			backgroundColor: {
 				'primary-light': '#E23E57',
 				'secondary-light': '#2C2C34',
