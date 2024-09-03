@@ -1,12 +1,12 @@
 <div style="display: flex; justify-content: center; align-items: center;">
- <img src="https://i.ibb.co/vs0KBRb/svgviewer-png-output.png" alt="svgviewer-png-output" border="0">
+ <img src="https://i.ibb.co/vs0KBRb/svgviewer-png-output.png" alt="libernotarum logo" border="0">
 </div>
 
 <div style="display: flex; justify-content: center; align-items: center;">
 
 </div>
 
-# <img src="static/favicon/favicon-32x32.png" alt="svgviewer-png-output" border="0"> liber notarum
+# <img src="static/favicon/favicon-32x32.png" alt="libernotarum logo" border="0"> liber notarum
 
 **Liber notarum** is a versatile note-taking app built with SvelteKit and Prisma that lets you manage and utilize your markdown content effectively.
 
