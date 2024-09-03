@@ -2,29 +2,36 @@
  <img src="https://i.ibb.co/vs0KBRb/svgviewer-png-output.png" alt="svgviewer-png-output" border="0">
 </div>
 
+<div style="display: flex; justify-content: center; align-items: center;">
 
-# liber notarum
+</div>
 
-**Liber notarum** is a versatile note-taking app built with SvelteKit and Prisma that lets you manage and utilize your markdown content effectively.  
+# <img src="static/favicon/favicon-32x32.png" alt="svgviewer-png-output" border="0"> liber notarum
+
+**Liber notarum** is a versatile note-taking app built with SvelteKit and Prisma that lets you manage and utilize your markdown content effectively.
 
 **Key Benefits:**
 
-* **Effortless Note Organization:** Structure your notes with ease using markdown syntax.
-* **Seamless Data Storage:** Securely store and retrieve your notes with a user-friendly interface.
-* **Powerful Database Integration:** Ensure efficient data management through Prisma.
+- **Effortless Note Organization:** Structure your notes with ease using markdown syntax.
+- **Seamless Data Storage:** Securely store and retrieve your notes with a user-friendly interface.
+- **Powerful Database Integration:** Ensure efficient data management through Prisma.
 
 **Getting Started**
 
 - **Prerequisites:** Node.js and npm (or yarn) installed on your system (installation instructions: [https://nodejs.org/en](https://nodejs.org/en))
 - **Clone the Repository:**
+
 ```bash
 git clone https://github.com/Michael-Obele/libernotarum.git
 ```
+
 - **Install Dependencies:**
+
 ```bash
 cd liber-notarum
 npm install  # or yarn install
 ```
+
 - **Database Setup:**
   Configure your database connection details in `prisma/schema.prisma`.
   Run migrations to create or update your database schema:
