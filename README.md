@@ -55,3 +55,5 @@ We welcome contributions to liber notarum! If you have ideas for improvement or 
 **License**
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b7b3ab7a-cbdf-4c19-b71b-93b3c876b945/deploy-status)](https://app.netlify.com/sites/libernotarum/deploys)
