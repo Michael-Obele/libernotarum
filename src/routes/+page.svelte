@@ -14,7 +14,16 @@
 </script>
 
 <svelte:head>
-	<title>Liber Notarum</title>
+	<title>Liber Notarum - Open Source Note Taking</title>
+	<meta
+		name="description"
+		content="Liber Notarum is a free and open-source digital notebook for modern note-taking, offering powerful features like Markdown support, note templates, and task management."
+	/>
+	<meta
+		name="keywords"
+		content="note taking, open source, markdown, digital notebook, task management, collaboration, secure notes"
+	/>
+	<link rel="canonical" href="https://libernotarum.tech/" />
 </svelte:head>
 
 <Navbar>
@@ -31,6 +40,8 @@
 	<span class="hidden md:block">
 		<LogoLong />
 	</span>
+
+	<span> </span>
 </div>
 
 <header class="bg-primary-light text-secondary-light p-6 text-center font-semibold lg:hidden">
