@@ -22,7 +22,7 @@
 	$: show = false;
 
 	let href = (item: string) => {
-		if (item === 'Home') {
+		if (item === 'About') {
 			return '/';
 		} else {
 			return `/${item}`;
@@ -34,11 +34,18 @@
 	<div class="flex flex-wrap items-center justify-around p-4">
 		<slot>
 			<!-- Logo -->
-			<a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-				<div class="flex text-2xl font-semibold dark:text-white">MiniApps</div>
+			<a
+				href="/app"
+				class="flex items-center space-x-3 md:order-2 rtl:space-x-reverse {isActive('/app')
+					? 'text-red-500 dark:text-red-400'
+					: ''}"
+				aria-current={isActive('/app') ? 'page' : false}
+			>
+				<div class="flex text-2xl font-semibold">Liber Notarum</div>
 			</a>
 			<!-- End of Logo -->
-			<div class="flex items-center space-x-3 md:order-2 md:mx-0 md:space-x-0">
+
+			<div class="flex items-center space-x-3 md:order-3 md:mx-0 md:space-x-0">
 				<div class="px-2">
 					<Button on:click={toggleMode} type="button" variant="outline" size="icon">
 						<Sun class="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
@@ -69,6 +76,7 @@
 					<Menu aria-hidden="true" />
 				</Button>
 			</div>
+			<!-- Links -->
 			<div
 				class={` w-full items-center justify-between md:order-1 md:flex md:w-auto ${show ? 'block' : 'hidden'}`}
 				id="navbar-user"
@@ -76,7 +84,7 @@
 				<ul
 					class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 md:dark:bg-gray-900 rtl:space-x-reverse"
 				>
-					{#each ['Home', 'Apps', 'About'] as item}
+					{#each ['FAQ', 'About'] as item}
 						<li>
 							<a
 								href={href(item)}
@@ -87,6 +95,7 @@
 					{/each}
 				</ul>
 			</div>
+			<!-- End of Links -->
 		</slot>
 	</div>
 </nav>
