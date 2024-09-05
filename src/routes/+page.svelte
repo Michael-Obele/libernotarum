@@ -8,7 +8,7 @@
 	// import ComingSoonV1 from '$lib/img/Coming Soon 1.svelte';
 	import ComingSoonV1 from '$lib/img/Coming Soon 1.png';
 	import ComingSoon from '$lib/img/Coming Soon.svelte';
-	import { PenLine } from 'lucide-svelte';
+	import { MoveDown, PenLine } from 'lucide-svelte';
 
 	export let data: PageData;
 </script>
@@ -33,7 +33,7 @@
 	</a>
 </Navbar>
 
-<div class="mx-auto flex h-screen w-fit flex-col justify-center pb-5 pt-10">
+<div class="mx-auto flex h-screen w-fit flex-col justify-center">
 	<span class="md:hidden">
 		<Logo />
 	</span>
@@ -41,16 +41,25 @@
 		<LogoLong />
 	</span>
 
-	<span> </span>
+	<a
+		href="#more"
+		class="group mt-[25vh] flex flex-col items-center justify-center text-center text-3xl"
+	>
+		See More
+		<MoveDown class="my-5 group-hover:animate-bounce" />
+	</a>
 </div>
 
 <header class="bg-primary-light text-secondary-light p-6 text-center font-semibold lg:hidden">
 	<h3 class="text-4xl">Coming Soon!</h3>
 </header>
 
-<main class="relative flex flex-row bg-gray-700 p-6 text-white dark:bg-gray-950">
+<div
+	id="more"
+	class="relative flex flex-row scroll-smooth bg-gray-700 p-6 text-white dark:bg-gray-950"
+>
 	<div class="max-w-2xl px-10">
-		<section class="my-6 space-y-5 leading-8">
+		<main class="my-6 space-y-5 leading-8">
 			<h1 class="text-4xl">Liber Notarum</h1>
 			<p class="text-lg capitalize">Note-taking, reimagined.</p>
 			<h2 class="text-accent1-light font-mono text-2xl md:text-3xl">
@@ -59,38 +68,25 @@
 
 			<div class="p-6 text-xl dark:text-gray-300">
 				<ol class="dark:list-decimal-dark list-decimal space-y-2">
-					<li class="mb-4 dark:mb-2">
-						The Latin term <strong class="text-yellow-400 dark:text-yellow-300"
-							>"Liber Notarum"</strong
-						>
-						translates to <span class="text-yellow-400 dark:text-yellow-300">"Book of Notes"</span>,
-						representing a digital notebook for capturing, organizing, and sharing knowledge.
-					</li>
-					<li class="mb-4 dark:mb-2">
-						Open-source digital notebook for modern note-taking.
-						<ul class="dark:list-disc-dark list-disc space-y-2 pl-8">
-							<li>
-								A constantly evolving project providing powerful <span
-									class="text-yellow-400 dark:text-yellow-300">note-taking capabilities</span
-								> with an intuitive interface.
+					{#each data.description as item, i}
+						{#if item.type == 'paragraph'}
+							<li class="mb-4 dark:mb-2">
+								{@html item.content}
 							</li>
-							<li>Available completely free and without attribution.</li>
-							<li>
-								Provides features like <span class="text-yellow-400 dark:text-yellow-300"
-									>Markdown support</span
-								>, <span class="text-yellow-400 dark:text-yellow-300">note templates</span>, and
-								<span class="text-yellow-400 dark:text-yellow-300">task management</span>.
-							</li>
-							<li>
-								Ensures robust <span class="text-yellow-400 dark:text-yellow-300">security</span>
-								and seamless
-								<span class="text-yellow-400 dark:text-yellow-300">collaboration</span>.
-							</li>
-						</ul>
-					</li>
+						{/if}
+						{#if item.items !== undefined}
+							{#each item.items as list}
+								<ul class="dark:list-disc-dark list-disc space-y-2 pl-8">
+									<li>
+										{@html list}
+									</li>
+								</ul>
+							{/each}
+						{/if}
+					{/each}
 				</ol>
 			</div>
-		</section>
+		</main>
 
 		<section class="my-6 space-y-5 leading-8">
 			<h2 class="text-accent1-light text-2xl font-bold md:text-3xl">
@@ -130,9 +126,6 @@
 		</div>
 		<h3 class="text-center text-3xl font-semibold tracking-tight">Coming Soon!</h3>
 	</div>
-</main>
+</div>
 
 <Footer />
-
-<style>
-</style>

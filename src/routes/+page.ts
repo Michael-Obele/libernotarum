@@ -52,8 +52,31 @@ export const load = (async () => {
 		}
 	];
 
+	const LiberNotarumDescription = [
+		{
+			type: 'paragraph',
+			content: `The Latin term <strong class="text-yellow-400 dark:text-yellow-300"
+							>"Liber Notarum"</strong
+						> translates to <span class="text-yellow-400 dark:text-yellow-300">"Book of Notes"</span>, representing a digital notebook for capturing, organizing, and sharing knowledge.`
+		},
+		{
+			type: 'paragraph',
+			content: 'Open-source digital notebook for modern note-taking.'
+		},
+		{
+			type: 'list',
+			items: [
+				'A constantly evolving project providing powerful <span class="text-yellow-400 dark:text-yellow-300">note-taking capabilities</span> with an intuitive interface.',
+				'Available completely free and without attribution.',
+				'Provides features like <span class="text-yellow-400 dark:text-yellow-300">Markdown support</span>, <span class="text-yellow-400 dark:text-yellow-300">note templates</span>, and <span class="text-yellow-400 dark:text-yellow-300">task management</span>.',
+				'Ensures robust <span class="text-yellow-400 dark:text-yellow-300">security</span> and seamless <span class="text-yellow-400 dark:text-yellow-300">collaboration</span>.'
+			]
+		}
+	];
+
 	return {
 		relatedWords,
-		sections
+		sections,
+		description: LiberNotarumDescription
 	};
 }) satisfies PageLoad;
