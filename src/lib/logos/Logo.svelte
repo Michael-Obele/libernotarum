@@ -1,11 +1,10 @@
 <svg
-	width="325"
-	height="217.4001007080078"
+	width="100%"
+	height="100%"
 	viewBox="0 0 325 217.40010424305697"
-	class="looka-1j8o68f"
+	class="looka-1j8o68f w-[80vw] max-w-3xl"
 	><defs id="SvgjsDefs1103"></defs><g
 		id="SvgjsG1104"
-		featurekey="nameFeature-0"
 		transform="matrix(3.2161908828133816,0,0,3.2161908828133816,0.0016430599723215994,3.6467933665081538)"
 		fill="#e23e57"
 		><path
@@ -14,7 +13,6 @@
 		></path></g
 	><g
 		id="SvgjsG1105"
-		featurekey="nameFeature-1"
 		transform="matrix(1.8224232534197815,0,0,1.8224232534197815,0.00000434499562601991,144.20715393262265)"
 		fill="#e23e57"
 		><path
