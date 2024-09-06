@@ -9,8 +9,14 @@
 	import ComingSoonV1 from '$lib/img/Coming Soon 1.png';
 	import ComingSoon from '$lib/img/Coming Soon.svelte';
 	import { MoveDown, PenLine } from 'lucide-svelte';
+	import { smoothScrollTo } from '$lib';
 
 	export let data: PageData;
+
+	// Example usage: Scroll to "#more" when a button is clicked
+	const handleClick = () => {
+		smoothScrollTo('more');
+	};
 </script>
 
 <svelte:head>
@@ -41,13 +47,13 @@
 		<LogoLong />
 	</span>
 
-	<a
-		href="#more"
+	<button
+		on:click={() => smoothScrollTo('more')}
 		class="group mt-[25vh] flex flex-col items-center justify-center text-center text-3xl"
 	>
 		See More
 		<MoveDown class="my-5 group-hover:animate-bounce" />
-	</a>
+	</button>
 </div>
 
 <header class="bg-primary-light text-secondary-light p-6 text-center font-semibold lg:hidden">
@@ -62,7 +68,7 @@
 		<main class="my-6 space-y-5 leading-8">
 			<h1 class="text-4xl">Liber Notarum</h1>
 			<p class="text-lg capitalize">Note-taking, reimagined.</p>
-			<h2 class="text-accent1-light font-mono text-2xl md:text-3xl">
+			<h2 class="text-accent1-light font-mono text-base sm:text-2xl md:text-3xl">
 				<span class="text-nowrap font-bold tracking-tighter">/ˈli:bər noʊˈtɑ:rəm/</span>
 			</h2>
 
@@ -110,7 +116,7 @@
 						related words
 					</h2>
 					<ul
-						class="mt-4 grid list-disc grid-cols-3 gap-x-5 gap-y-3 pl-6 capitalize text-gray-100 dark:text-gray-200"
+						class="mt-4 flex list-disc grid-cols-3 flex-col gap-x-5 gap-y-3 pl-6 capitalize text-gray-100 dark:text-gray-200 sm:grid"
 					>
 						{#each data.relatedWords as word}
 							<li>{word}</li>
@@ -120,12 +126,14 @@
 			{/if}
 		{/each}
 	</div>
-	<div class="sticky right-16 top-0 ml-[20vw] mt-[5vh] hidden size-fit pt-[10rem] lg:block">
+	<section class="sticky right-16 top-0 ml-[20vw] mt-[5vh] hidden size-fit pt-[10rem] lg:block">
 		<div class="mb-2 size-96">
-			<img src={ComingSoonV1} alt="Coming Soon" />
+			<img src={ComingSoonV1} alt="Liber Notarum - Coming Soon" />
 		</div>
-		<h3 class="text-center text-3xl font-semibold tracking-tight">Coming Soon!</h3>
-	</div>
+		<h3 class="text-center text-3xl font-semibold tracking-tight">
+			Liber Notarum is launching soon!
+		</h3>
+	</section>
 </div>
 
 <Footer />
