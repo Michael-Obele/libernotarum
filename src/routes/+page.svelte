@@ -9,14 +9,17 @@
 	import ComingSoonV1 from '$lib/img/Coming Soon 1.png';
 	import ComingSoon from '$lib/img/Coming Soon.svelte';
 	import { MoveDown, PenLine } from 'lucide-svelte';
-	import { smoothScrollTo } from '$lib';
 
 	export let data: PageData;
 
-	// Example usage: Scroll to "#more" when a button is clicked
-	const handleClick = () => {
-		smoothScrollTo('more');
-	};
+	function smoothScrollTo(id: string) {
+		const element = document.getElementById(id);
+		if (element) {
+			element.scrollIntoView({
+				behavior: 'smooth'
+			});
+		}
+	}
 </script>
 
 <svelte:head>
@@ -55,10 +58,6 @@
 		<MoveDown class="my-5 group-hover:animate-bounce" />
 	</button>
 </div>
-
-<header class="bg-primary-light text-secondary-light p-6 text-center font-semibold lg:hidden">
-	<h3 class="text-4xl">Coming Soon!</h3>
-</header>
 
 <div
 	id="more"
