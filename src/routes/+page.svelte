@@ -1,4 +1,6 @@
 <script lang="ts">
+	import NavAddOns from '$lib/blocks/NavAddOns.svelte';
+
 	import Footer from './Footer.svelte';
 	import type { PageData } from './$types';
 	import Navbar from '$lib/blocks/navbar.svelte';
@@ -47,21 +49,7 @@
 	</a>
 
 	<div class="flex items-center space-x-3 md:order-3 md:mx-0 md:space-x-0">
-		<div class="px-2">
-			<Button on:click={toggleMode} type="button" variant="outline" size="icon">
-				<Sun class="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-				<Moon
-					class="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-				/>
-				<span class="sr-only">Toggle theme</span>
-			</Button>
-			<Button variant="outline" type="button" size="icon">
-				<a target="_blank" href="https://github.com/Michael-Obele/libernotarum">
-					<span class="sr-only">See GitHub Repo</span>
-					<Github class="h-[1.2rem] w-[1.2rem]" />
-				</a>
-			</Button>
-		</div>
+		<NavAddOns />
 	</div>
 </Navbar>
 

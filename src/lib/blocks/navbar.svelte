@@ -1,12 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import Sun from 'lucide-svelte/icons/sun';
-	import Moon from 'lucide-svelte/icons/moon';
-	import { toggleMode } from 'mode-watcher';
 	import { Button } from '$lib/components/ui/button';
-
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
-	import { Github, Menu } from 'lucide-svelte';
+	import {  Menu } from 'lucide-svelte';
+	import NavAddOns from './NavAddOns.svelte';
 
 	// Reactive statement to determine if the current route matches the item
 	$: isActive = (item: string) => {
@@ -42,21 +39,7 @@
 			<!-- End of Logo -->
 
 			<div class="flex items-center space-x-3 md:order-3 md:mx-0 md:space-x-0">
-				<div class="px-2">
-					<Button on:click={toggleMode} type="button" variant="outline" size="icon">
-						<Sun class="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-						<Moon
-							class="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-						/>
-						<span class="sr-only">Toggle theme</span>
-					</Button>
-					<Button variant="outline" type="button" size="icon">
-						<a target="_blank" href="https://github.com/Michael-Obele/libernotarum">
-							<span class="sr-only">See GitHub Repo</span>
-							<Github class="h-[1.2rem] w-[1.2rem]" />
-						</a>
-					</Button>
-				</div>
+				<NavAddOns />
 				<Button
 					data-collapse-toggle="navbar-user"
 					variant="outline"

@@ -3,8 +3,8 @@
 </script>
 
 <footer class="bg-gray-100 p-6 text-center text-gray-800 dark:bg-gray-900 dark:text-white">
-	<div class="container mx-auto">
-		<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+	<div class="mx-auto flex justify-center">
+		<div class="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3">
 			<div>
 				<h3 class="mb-4 text-lg font-semibold">Liber Notarum</h3>
 				<p class="text-sm">A free and open-source digital notebook for modern note-taking.</p>
@@ -44,7 +44,7 @@
 				<div class="flex justify-center space-x-4">
 					<a href="https://x.com/Dev_Obele" target="_blank" rel="noopener noreferrer">
 						<span class="sr-only">Twitter</span>
-						<Twitter class="h-6 w-6 hover:fill-black" />
+						<Twitter class="h-6 w-6 hover:fill-black dark:hover:fill-white" />
 					</a>
 					<a
 						href="https://github.com/Michael-Obele/libernotarum"
@@ -52,13 +52,13 @@
 						rel="noopener noreferrer"
 					>
 						<span class="sr-only">GitHub</span>
-						<Github class="h-6 w-6 hover:fill-black" />
+						<Github class="h-6 w-6 hover:fill-black dark:hover:fill-white" />
 					</a>
 				</div>
 			</div>
 		</div>
-		<p class="mt-8 text-sm">&copy; 2024 Liber Notarum. All rights reserved.</p>
 	</div>
+	<p class="mt-8 text-sm">&copy; 2024 Liber Notarum. All rights reserved.</p>
 </footer>
 
 <style>
