@@ -8,7 +8,9 @@
 	// import ComingSoonV1 from '$lib/img/Coming Soon 1.svelte';
 	import ComingSoonV1 from '$lib/img/Coming Soon 1.png';
 	import ComingSoon from '$lib/img/Coming Soon.svelte';
-	import { MoveDown, PenLine } from 'lucide-svelte';
+	import { MoveDown, PenLine, Github, Sun, Moon } from 'lucide-svelte';
+	import { toggleMode } from 'mode-watcher';
+	import { Button } from '$lib/components/ui/button';
 
 	export let data: PageData;
 
@@ -36,10 +38,31 @@
 </svelte:head>
 
 <Navbar>
+	<div>
+		<!-- Empty Div for spacing -->
+	</div>
 	<a href="/app" class="flex items-center space-x-2">
 		<PenLine />
 		<h3 class="text-xl">Start Here</h3>
 	</a>
+
+	<div class="flex items-center space-x-3 md:order-3 md:mx-0 md:space-x-0">
+		<div class="px-2">
+			<Button on:click={toggleMode} type="button" variant="outline" size="icon">
+				<Sun class="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+				<Moon
+					class="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+				/>
+				<span class="sr-only">Toggle theme</span>
+			</Button>
+			<Button variant="outline" type="button" size="icon">
+				<a target="_blank" href="https://github.com/Michael-Obele/libernotarum">
+					<span class="sr-only">See GitHub Repo</span>
+					<Github class="h-[1.2rem] w-[1.2rem]" />
+				</a>
+			</Button>
+		</div>
+	</div>
 </Navbar>
 
 <div class="mx-auto flex h-screen w-fit flex-col justify-center">

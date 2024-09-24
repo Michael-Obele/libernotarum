@@ -12,22 +12,18 @@
 	$: isActive = (item: string) => {
 		const routeId = $page.url.pathname;
 		show = false;
-		if (item === 'Home' && routeId == '/') {
+		// Special case for the home page
+		if (item === 'Home' && routeId === '/') {
 			return true;
 		} else {
-			return routeId && (`/${item}` === routeId || routeId.includes(item));
+			// Construct the expected route path for other items
+			return routeId === `/${item.toLowerCase()}`;
 		}
 	};
 
 	$: show = false;
 
-	let href = (item: string) => {
-		if (item === 'About') {
-			return '/';
-		} else {
-			return `/${item}`;
-		}
-	};
+	// No need for a separate href function, use item directly
 </script>
 
 <nav class="border-gray-200 bg-white dark:bg-gray-900">
@@ -35,11 +31,11 @@
 		<slot>
 			<!-- Logo -->
 			<a
-				href="/app"
-				class="flex items-center space-x-3 md:order-2 rtl:space-x-reverse {isActive('/app')
+				href="/"
+				class="flex items-center space-x-3 md:order-2 rtl:space-x-reverse {isActive('Home')
 					? 'text-red-500 dark:text-red-400'
 					: ''}"
-				aria-current={isActive('/app') ? 'page' : false}
+				aria-current={isActive('Home') ? 'page' : false}
 			>
 				<div class="flex text-2xl font-semibold">Liber Notarum</div>
 			</a>
@@ -55,7 +51,7 @@
 						<span class="sr-only">Toggle theme</span>
 					</Button>
 					<Button variant="outline" type="button" size="icon">
-						<a target="_blank" href="https://github.com/Michael-Obele/Svelte-MiniApps">
+						<a target="_blank" href="https://github.com/Michael-Obele/libernotarum">
 							<span class="sr-only">See GitHub Repo</span>
 							<Github class="h-[1.2rem] w-[1.2rem]" />
 						</a>
@@ -84,10 +80,10 @@
 				<ul
 					class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 md:dark:bg-gray-900 rtl:space-x-reverse"
 				>
-					{#each ['FAQ', 'About'] as item}
+					{#each ['Home', 'App', 'FAQ', 'About'] as item}
 						<li>
 							<a
-								href={href(item)}
+								href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
 								class={`${isActive(item) ? 'block rounded bg-red-700 px-3 py-2 text-white md:bg-transparent md:p-0 md:text-red-700 md:dark:text-red-500' : 'block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-red-700 md:dark:hover:bg-transparent md:dark:hover:text-red-500'}`}
 								aria-current={isActive(item) ? 'page' : undefined}>{item}</a
 							>

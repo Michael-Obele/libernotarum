@@ -5,6 +5,6 @@
 
 <ModeWatcher />
 
-<div class="bg-black">
+<div class="">
 	<slot></slot>
 </div>
