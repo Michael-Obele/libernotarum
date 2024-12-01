@@ -49,12 +49,16 @@
 	</div>
 </Navbar>
 
-<main>
 	<!-- Hero Section -->
-	<section class="relative flex min-h-screen flex-col items-center justify-center px-4 text-center">
-		<div class="space-y-8">
-			<div class="flex items-center justify-center">
+	<main class="relative mx-auto mt-20 max-w-7xl px-6 text-center md:px-8">
+		<!-- Announcement Banner -->
+		<div class="backdrop-filter-[12px] animate-fade-in group inline-flex h-7 items-center justify-between gap-1 rounded-full border border-primary/10 bg-primary/5 px-3 text-xs text-primary transition-all ease-in hover:cursor-pointer hover:bg-primary/10">
+			<span>✨ Welcome to the future of note-taking</span>
+		</div>
 
+		<!-- Hero Content -->
+		<div class="mt-8 space-y-8">
+			<div class="flex items-center justify-center">
 				<span class="md:hidden">
 					<Logo />
 				</span>
@@ -63,22 +67,24 @@
 				</span>
 			</div>
 			
-			<h1 class="text-4xl font-bold tracking-tighter md:text-6xl">
-				Your Ideas, <span class="text-primary">Beautifully Organized</span>
-			</h1>
-			
-			<p class="mx-auto max-w-2xl text-xl text-muted-foreground">
-				Experience the future of note-taking with our modern, open-source platform that combines
-				powerful features with elegant simplicity.
-			</p>
+			<div class="space-y-4">
+				<h1 class="text-4xl font-bold tracking-tighter md:text-6xl lg:text-7xl">
+					Your Ideas, <span class="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Beautifully Organized</span>
+				</h1>
+				
+				<p class="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl">
+					Experience the future of note-taking with our modern, open-source platform that combines
+					powerful features with elegant simplicity.
+				</p>
+			</div>
 
-			<div class="flex justify-center gap-4">
-				<a href="/app" class="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90">
+			<div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+				<a href="/app" class="inline-flex min-w-[160px] items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground shadow-lg transition-all hover:scale-105 hover:bg-primary/90 hover:shadow-primary/20">
 					Get Started
 				</a>
 				<button
 					on:click={() => smoothScrollTo('features')}
-					class="inline-flex items-center justify-center rounded-md border border-input bg-background px-8 py-3 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
+					class="inline-flex min-w-[160px] items-center justify-center rounded-md border border-slate-200 bg-background px-8 py-3 text-sm font-medium shadow-sm transition-all hover:scale-105 hover:bg-slate-50 hover:shadow-lg dark:border-slate-800 dark:hover:bg-slate-900"
 				>
 					Learn More
 				</button>
@@ -87,20 +93,21 @@
 
 		<button
 			on:click={() => smoothScrollTo('features')}
-			class="mt-28 text-muted-foreground transition-colors hover:text-foreground"
+			class="mt-16 text-muted-foreground transition-colors hover:text-foreground md:mt-24"
 		>
-			<MoveDown class="size-16 animate-bounce rounded-full border border-gray-300 p-4" />
+			<MoveDown class="size-16 animate-bounce rounded-full border border-slate-200 p-4 shadow-lg transition-all hover:border-primary hover:text-primary dark:border-slate-800" />
 		</button>
-	</section>
-</main>
+	</main>
 
-	<!-- Features Grid -->
-	<section id="features" class="bg-muted/50 py-20">
-		<div class="container">
-			<h2 class="mb-4 text-center text-3xl font-bold md:text-4xl">Powerful Features</h2>
-			<p class="mb-12 text-center text-xl text-muted-foreground">
-				Everything you need for efficient note-taking and knowledge management
-			</p>
+	<!-- Features Section -->
+	<section id="features" class="relative overflow-hidden bg-slate-50/50 py-24 dark:bg-slate-900/50">
+		<div class="container relative z-10">
+			<div class="mx-auto max-w-2xl text-center">
+				<h2 class="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Powerful Features</h2>
+				<p class="text-lg text-muted-foreground">
+					Everything you need for efficient note-taking and knowledge management
+				</p>
+			</div>
 			<Features />
 		</div>
 	</section>

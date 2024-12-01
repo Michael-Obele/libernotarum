@@ -1,13 +1,27 @@
 <script lang="ts">
   import { cn } from "$lib/utils";
-  let className: any = "";
-  export { className as class };
-  export let name;
-  export let background;
-  export let Icon;
-  export let description;
-  export let href;
-  export let cta;
+  
+  interface Props {
+    class?: any;
+    name: any;
+    background: any;
+    Icon: any;
+    description: any;
+    href: any;
+    cta: any;
+  }
+
+  let {
+    class: className = "",
+    name,
+    background,
+    Icon,
+    description,
+    href,
+    cta
+  }: Props = $props();
+
+  const SvelteComponent = $derived(background);
 </script>
 
 <div
@@ -20,13 +34,12 @@
   )}
 >
   <div>
-    <svelte:component this={background} />
+    <SvelteComponent />
   </div>
   <div
     class="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10"
   >
-    <svelte:component
-      this={Icon}
+    <Icon
       class="h-12 w-12 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75 dark:text-neutral-300"
     />
 
@@ -41,7 +54,7 @@
       "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
     )}
   >
-    <a {href} class="inline-flex items-center text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:underline">
+    <a {href} class="inline-flex items-center text-sm font-medium text-neutral-700 hover:underline dark:text-neutral-300">
       {cta}
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -62,5 +75,5 @@
   </div>
   <div
     class="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10"
-  />
+  ></div>
 </div>
