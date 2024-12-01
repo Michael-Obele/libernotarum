@@ -1,62 +1,60 @@
-<div style="display: flex; justify-content: center; align-items: center;">
- <img src="https://i.ibb.co/vs0KBRb/svgviewer-png-output.png" alt="libernotarum logo" border="0">
+<div align="center">
+  <img src="https://i.ibb.co/vs0KBRb/svgviewer-png-output.png" alt="libernotarum logo" width="200">
+
+  # ✨ Liber Notarum
+
+  > Your thoughts, beautifully organized.
+
+  A modern, powerful markdown editor built with SvelteKit that transforms the way you take notes.
+
+  [![Made with SvelteKit](https://img.shields.io/badge/Made%20with-SvelteKit-FF3E00.svg)](https://kit.svelte.dev/)
+  [![Powered by Prisma](https://img.shields.io/badge/Powered%20by-Prisma-2D3748.svg)](https://www.prisma.io/)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 </div>
 
-<div style="display: flex; justify-content: center; align-items: center;">
+## 🚀 Features
 
-</div>
+- **📝 Live Markdown Preview** - See your formatting come to life as you type
+- **🎨 Beautiful UI** - Modern, responsive interface with dark mode support
+- **🔍 Smart Search** - Find your notes instantly with powerful full-text search
+- **💾 Auto-Save** - Never lose your work with automatic saving
+- **🎯 Code Friendly** - Perfect for developers with syntax highlighting
+- **📱 Responsive Design** - Works seamlessly on desktop and mobile
 
-# <img src="static/favicon/favicon-32x32.png" alt="libernotarum logo" border="0"> liber notarum
+## 🎯 Why Liber Notarum?
 
-**Liber notarum** is a versatile note-taking app built with SvelteKit and Prisma that lets you manage and utilize your markdown content effectively.
+Liber Notarum isn't just another note-taking app. It's a powerful markdown editor that combines the simplicity of plain text with the flexibility of modern web technologies. Whether you're a developer documenting code, a writer crafting stories, or someone who loves organizing thoughts, Liber Notarum adapts to your workflow.
 
-**Key Benefits:**
+## 🛠️ Getting Started
 
-- **Effortless Note Organization:** Structure your notes with ease using markdown syntax.
-- **Seamless Data Storage:** Securely store and retrieve your notes with a user-friendly interface.
-- **Powerful Database Integration:** Ensure efficient data management through Prisma.
+1. **Prerequisites**
+   - Node.js 16+ or Bun
+   - A modern web browser
 
-**Getting Started**
-
-- **Prerequisites:** Node.js and npm (or yarn) installed on your system (installation instructions: [https://nodejs.org/en](https://nodejs.org/en))
-- **Clone the Repository:**
-
-```bash
-git clone https://github.com/Michael-Obele/libernotarum.git
-```
-
-- **Install Dependencies:**
-
-```bash
-cd liber-notarum
-npm install  # or yarn install
-```
-
-- **Database Setup:**
-  Configure your database connection details in `prisma/schema.prisma`.
-  Run migrations to create or update your database schema:
-  ```bash
-  npx prisma migrate dev
-  ```
-  Replace `dev` with your desired environment (e.g., `production`) if applicable.
-
-**Development**
-
-1. **Start the Development Server:**
+2. **Installation**
    ```bash
-   npm run dev  # or yarn dev
+   # Clone the repository
+   git clone https://github.com/Michael-Obele/libernotarum.git
+   cd libernotarum
+
+   # Install dependencies (with npm)
+   npm install
+   # Or with Bun
+   bun install
+
+   # Start the development server
+   npm run dev
+   # Or with Bun
+   bun run dev
    ```
-   This opens the application in your default web browser, usually at `http://localhost:5173/`.
-2. **Make Changes and See Results:**
-   Edit files within the `src` directory using a code editor (e.g., Visual Studio Code, Sublime Text).
-   The development server automatically refreshes the browser for a streamlined workflow.
 
-**Deployment**
+## 🤝 Contributing
 
-Refer to the SvelteKit documentation for detailed deployment instructions based on your preferred hosting platform: [https://kit.svelte.dev/docs/building-your-app](https://kit.svelte.dev/docs/building-your-app)
+We welcome contributions! Whether it's bug fixes, feature additions, or documentation improvements, feel free to make a pull request.
 
-**Contributing**
+## 📝 License
 
-We welcome contributions to liber notarum! If you have ideas for improvement or want to fix bugs, please create a pull request on GitHub. Refer to our contribution guidelines (if available) for a smooth review process.
+MIT License - feel free to use this project however you'd like!
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b7b3ab7a-cbdf-4c19-b71b-93b3c876b945/deploy-status)](https://app.netlify.com/sites/libernotarum/deploys)

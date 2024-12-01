@@ -2,81 +2,83 @@ import type { PageLoad } from './$types';
 
 export const load = (async () => {
 	const relatedWords = [
-		'note-taking',
-		'organization',
-		'collaboration',
-		'productivity',
-		'markdown',
-		'templates',
-		'security',
-		'cross-platform',
-		'digital notebook',
-		'knowledge management',
-		'open-source',
-		'clean interface',
-		'robust security',
-		'seamless collaboration',
-		'customizable notes'
+		'intelligent note-taking',
+		'seamless organization',
+		'real-time collaboration',
+		'enhanced productivity',
+		'markdown mastery',
+		'smart templates',
+		'enterprise security',
+		'cross-platform sync',
+		'digital workspace',
+		'knowledge hub',
+		'open-source innovation',
+		'modern interface',
+		'end-to-end encryption',
+		'team collaboration',
+		'AI-powered notes'
 	];
 
 	const sections = [
 		{
-			title: 'synopsis',
+			title: 'Transform Your Note-Taking',
 			content:
-				'Capture, organize, and share your thoughts, ideas, and knowledge with ease. Liber Notarum offers a clean, intuitive interface, robust security, and seamless collaboration. Customize your notes with Markdown support, templates, and task management. Access your notes from any device, ensuring productivity on the go.'
+				'Experience the future of note-taking with Liber Notarum. Our platform combines the simplicity of markdown with the power of modern technology, creating a seamless environment where your ideas can flourish. With real-time collaboration, smart organization, and powerful search capabilities, your knowledge is always at your fingertips.'
 		},
 		{
-			title: 'technology',
+			title: 'Built for the Modern Age',
 			content:
-				'Utilize a digital notebook that scales with your needs, offering a smooth user experience and future-proof features. With minimalistic design and powerful functionality, Liber Notarum ensures your notes are always accessible, secure, and well-organized.'
+				'Powered by cutting-edge technology, Liber Notarum is designed for the way you work today. Whether you\'re a developer documenting code, a researcher organizing findings, or a team collaborating on projects, our platform adapts to your workflow with intelligent features and lightning-fast performance.'
 		},
 		{
-			title: 'style',
+			title: 'Beautiful by Design',
 			content:
-				'Enjoy a clean, minimalist design with customizable colors and layouts. Combine and modify elements to create a personalized note-taking experience that balances simplicity and sophistication.'
+				'Immerse yourself in a thoughtfully crafted interface that combines aesthetics with functionality. With support for both light and dark modes, customizable themes, and a clean, distraction-free writing environment, Liber Notarum helps you focus on what matters most - your content.'
 		},
 		{
-			title: 'open-source license',
+			title: 'Open Source Freedom',
 			content:
-				'Liber Notarum is completely free for personal and commercial use, with no attribution required. Embrace the freedom to use, modify, and share without restrictions. Just don’t replicate or redistribute the platform as your own.'
+				'Join a thriving community of innovators. Liber Notarum is proudly open source, giving you the freedom to use, modify, and enhance the platform. Contribute to the future of note-taking while maintaining complete control over your data and workflow.'
 		},
 		{
-			title: 'history',
+			title: 'Born from Necessity',
 			content:
-				'Liber Notarum, launched in 2024, aims to revolutionize digital note-taking for individuals with ADHD or those seeking to manage tasks and notes effortlessly. Inspired by the open-source community, the platform is designed to reduce stress and enhance productivity.'
+				'Created in 2024, Liber Notarum emerged from a vision to make note-taking more accessible and efficient for everyone, especially those with ADHD. By combining intelligent organization with intuitive design, we\'re making knowledge management stress-free and enjoyable.'
 		},
 		{
-			title: 'future plans',
+			title: 'Continuous Innovation',
 			content:
-				'Liber Notarum is a constantly evolving project, with plans to expand its capabilities and enhance the user experience. Stay tuned for updates and new features to come.'
+				'The future of Liber Notarum is bright and dynamic. With upcoming features like AI-powered insights, advanced collaboration tools, and enhanced customization options, we\'re constantly evolving to meet your needs. Be part of our journey in revolutionizing digital note-taking.'
 		}
 	];
 
-	const LiberNotarumDescription = [
+	const description = [
 		{
 			type: 'paragraph',
-			content: `The Latin term <strong class="text-yellow-400 dark:text-yellow-300"
-							>"Liber Notarum"</strong
-						> translates to <span class="text-yellow-400 dark:text-yellow-300">"Book of Notes"</span>, representing a digital notebook for capturing, organizing, and sharing knowledge.`
+			content:
+				'Welcome to the future of note-taking. Liber Notarum is more than just a digital notebook - it\'s your personal knowledge hub where ideas come to life.'
 		},
 		{
 			type: 'paragraph',
-			content: 'Open-source digital notebook for modern note-taking.'
+			content:
+				'Built for modern professionals, researchers, and creatives, our platform combines powerful features with elegant simplicity:'
 		},
 		{
 			type: 'list',
 			items: [
-				'A constantly evolving project providing powerful <span class="text-yellow-400 dark:text-yellow-300">note-taking capabilities</span> with an intuitive interface.',
-				'Available completely free and without attribution.',
-				'Provides features like <span class="text-yellow-400 dark:text-yellow-300">Markdown support</span>, <span class="text-yellow-400 dark:text-yellow-300">note templates</span>, and <span class="text-yellow-400 dark:text-yellow-300">task management</span>.',
-				'Ensures robust <span class="text-yellow-400 dark:text-yellow-300">security</span> and seamless <span class="text-yellow-400 dark:text-yellow-300">collaboration</span>.'
+				'🚀 Lightning-fast markdown editor with real-time preview',
+				'🔍 Intelligent organization with smart tags and folders',
+				'🤝 Seamless collaboration tools for team productivity',
+				'🎨 Beautiful, customizable interface with dark mode support',
+				'🔒 Enterprise-grade security with end-to-end encryption',
+				'💡 AI-powered insights and smart suggestions'
 			]
 		}
 	];
 
 	return {
-		relatedWords,
+		description,
 		sections,
-		description: LiberNotarumDescription
+		relatedWords
 	};
 }) satisfies PageLoad;
