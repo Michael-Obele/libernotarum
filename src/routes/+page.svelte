@@ -50,9 +50,9 @@
 </Navbar>
 
 	<!-- Hero Section -->
-	<main class="relative mx-auto mt-20 max-w-7xl px-6 text-center md:px-8">
+	<main class="relative mx-auto mt-3 min-h-screen max-w-7xl px-6 text-center md:px-8">
 		<!-- Announcement Banner -->
-		<div class="backdrop-filter-[12px] animate-fade-in group inline-flex h-7 items-center justify-between gap-1 rounded-full border border-primary/10 bg-primary/5 px-3 text-xs text-primary transition-all ease-in hover:cursor-pointer hover:bg-primary/10">
+		<div class="backdrop-filter-[12px] animate-fade-in group mt-10 inline-flex h-7 items-center justify-between gap-1 rounded-full border border-primary/10 bg-primary/5 px-3 text-xs text-primary transition-all ease-in hover:cursor-pointer hover:bg-primary/10">
 			<span>✨ Welcome to the future of note-taking</span>
 		</div>
 
