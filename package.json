@@ -44,10 +44,14 @@
     "bits-ui": "^1.0.0-next.65",
     "carta-md": "^4.5.0",
     "clsx": "^2.1.1",
+    "cmdk-sv": "^0.0.18",
+    "embla-carousel-svelte": "^8.5.1",
+    "embla-carousel-wheel-gestures": "^8.0.1",
     "isomorphic-dompurify": "^2.15.0",
     "lucide-svelte": "^0.462.0",
     "mode-watcher": "^0.4.1",
     "prisma": "^5.19.1",
+    "svelte-motion": "^0.12.2",
     "tailwind-merge": "^2.5.5",
     "tailwind-variants": "^0.3.0"
   }

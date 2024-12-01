@@ -9,6 +9,7 @@
 	import ComingSoonV1 from '$lib/img/Coming Soon 1.png';
 	import { MoveDown, PenLine } from 'lucide-svelte';
 	import Features from '$lib/components/Features.svelte';
+	import ContentSection from '$lib/components/ContentSection.svelte';
 
 	export let data: PageData;
 
@@ -113,14 +114,23 @@
 	</section>
 
 	<!-- Content Sections -->
-	<section class="py-20">
-		<div class="container max-w-6xl">
-			<div class="grid gap-12 md:grid-cols-2">
+	<section class="relative overflow-hidden py-24">
+		<!-- Background decoration -->
+		<div class="pointer-events-none absolute inset-0 flex items-center justify-center opacity-20">
+			<div class="h-[40rem] w-[40rem] rounded-full bg-primary/20 blur-3xl" ></div>
+		</div>
+
+		<div class="container relative z-10 max-w-6xl">
+			<div class="mx-auto mb-16 max-w-2xl text-center">
+				<h2 class="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Why Choose Liber Notarum?</h2>
+				<p class="text-lg text-muted-foreground">
+					Discover the features that make our platform stand out from the rest
+				</p>
+			</div>
+
+			<div class="grid gap-8 md:grid-cols-2">
 				{#each data.sections as section, i}
-					<div class="space-y-4">
-						<h3 class="text-2xl font-bold">{section.title}</h3>
-						<p class="text-muted-foreground">{section.content}</p>
-					</div>
+					<ContentSection {section} index={i} />
 				{/each}
 			</div>
 		</div>
