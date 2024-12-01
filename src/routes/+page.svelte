@@ -11,6 +11,7 @@
 	import Features from '$lib/components/Features.svelte';
 	import ContentSection from '$lib/components/ContentSection.svelte';
 	import { onMount } from 'svelte';
+	import BlurFade from '$lib/blocks/BlurFade.svelte';
 
 	interface Props {
 		data: PageData;
@@ -150,7 +151,9 @@
 
 			<div class="grid gap-8 md:grid-cols-2">
 				{#each data.sections as section, i}
+				<BlurFade>
 					<ContentSection {section} index={i} />
+				</BlurFade>
 				{/each}
 			</div>
 		</div>
