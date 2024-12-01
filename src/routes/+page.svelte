@@ -52,7 +52,7 @@
 	<!-- Hero Section -->
 	<main class="relative mx-auto mt-3 min-h-screen max-w-7xl px-6 text-center md:px-8">
 		<!-- Announcement Banner -->
-		<div class="backdrop-filter-[12px] animate-fade-in group mt-10 inline-flex h-7 items-center justify-between gap-1 rounded-full border border-primary/10 bg-primary/5 px-3 text-xs text-primary transition-all ease-in hover:cursor-pointer hover:bg-primary/10">
+		<div class="backdrop-filter-[12px] animate-fade-in group mt-10 inline-flex h-7 items-center justify-between gap-1 rounded-full border border-primary/10 bg-primary/5 px-3 text-xs text-primary transition-all ease-in hover:cursor-pointer hover:bg-primary/10 dark:border-primary/60">
 			<span>✨ Welcome to the future of note-taking</span>
 		</div>
 
@@ -93,9 +93,9 @@
 
 		<button
 			on:click={() => smoothScrollTo('features')}
-			class="mt-16 text-muted-foreground transition-colors hover:text-foreground md:mt-24"
+			class="group mt-16 text-muted-foreground transition-colors hover:text-foreground md:mt-24"
 		>
-			<MoveDown class="size-16 animate-bounce rounded-full border border-slate-200 p-4 shadow-lg transition-all hover:border-primary hover:text-primary dark:border-slate-800" />
+			<MoveDown class="size-16 animate-bounce rounded-full border border-slate-200 p-4 shadow-lg transition-all hover:border-primary hover:text-primary dark:border-slate-300 group-hover:dark:border-slate-400" />
 		</button>
 	</main>
 

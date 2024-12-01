@@ -4,9 +4,14 @@
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import {  Menu } from 'lucide-svelte';
 	import NavAddOns from './NavAddOns.svelte';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 
 	// Reactive statement to determine if the current route matches the item
-	$: isActive = (item: string) => {
+	let isActive = $derived((item: string) => {
 		const routeId = $page.url.pathname;
 		show = false;
 		// Special case for the home page
@@ -16,16 +21,17 @@
 			// Construct the expected route path for other items
 			return routeId === `/${item.toLowerCase()}`;
 		}
-	};
+	});
 
-	$: show = false;
+	let show = $state(false);
+	
 
 	// No need for a separate href function, use item directly
 </script>
 
 <nav class="border-gray-200 bg-white dark:bg-gray-900">
 	<div class="flex flex-wrap items-center justify-around p-4">
-		<slot>
+		{#if children}{@render children()}{:else}
 			<!-- Logo -->
 			<a
 				href="/"
@@ -47,7 +53,7 @@
 					size="icon"
 					class="inline-flex h-10 w-10 items-center justify-center rounded-lg px-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
 					aria-controls="navbar-user"
-					on:click={() => (show = !show)}
+					onclick={() => (show = !show)}
 					aria-expanded="false"
 				>
 					<span class="sr-only">Open main menu</span>
@@ -75,6 +81,6 @@
 				</ul>
 			</div>
 			<!-- End of Links -->
-		</slot>
+		{/if}
 	</div>
 </nav>
