@@ -10,8 +10,13 @@
 	import { MoveDown, PenLine } from 'lucide-svelte';
 	import Features from '$lib/components/Features.svelte';
 	import ContentSection from '$lib/components/ContentSection.svelte';
+	import { onMount } from 'svelte';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 
 	function smoothScrollTo(id: string) {
 		const element = document.getElementById(id);
@@ -21,6 +26,16 @@
 			});
 		}
 	}
+
+	$effect(() => {
+		// Small delay to ensure smooth animation after page load
+		setTimeout(() => {
+			const mainElement = document.querySelector('main');
+			if (mainElement) {
+				mainElement.scrollIntoView({ behavior: 'smooth' });
+			}
+		}, 100);
+	});
 </script>
 
 <svelte:head>
@@ -53,7 +68,7 @@
 	<!-- Hero Section -->
 	<main class="relative mx-auto mt-3 min-h-screen max-w-7xl px-6 text-center md:px-8">
 		<!-- Announcement Banner -->
-		<div class="backdrop-filter-[12px] animate-fade-in group mt-10 inline-flex h-7 items-center justify-between gap-1 rounded-full border border-primary/10 bg-primary/5 px-3 text-xs text-primary transition-all ease-in hover:cursor-pointer hover:bg-primary/10 dark:border-primary/60">
+		<div class="backdrop-filter-[12px] animate-fade-in group mt-5 inline-flex h-7 items-center justify-between gap-1 rounded-full border border-primary/10 bg-primary/5 px-3 text-xs text-primary transition-all ease-in hover:cursor-pointer hover:bg-primary/10 dark:border-primary/60">
 			<span>✨ Welcome to the future of note-taking</span>
 		</div>
 
@@ -77,6 +92,11 @@
 					Experience the future of note-taking with our modern, open-source platform that combines
 					powerful features with elegant simplicity.
 				</p>
+
+				<div class="mx-auto max-w-xl rounded-2xl bg-slate-50/50 px-4 py-2 text-sm text-muted-foreground dark:bg-slate-900/50">
+					<em>Liber Notarum</em> — Latin for "Book of Notes", embodying the timeless art of knowledge preservation 
+					with modern innovation.
+				</div>
 			</div>
 
 			<div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -84,7 +104,7 @@
 					Get Started
 				</a>
 				<button
-					on:click={() => smoothScrollTo('features')}
+					onclick={() => smoothScrollTo('features')}
 					class="inline-flex min-w-[160px] items-center justify-center rounded-md border border-slate-200 bg-background px-8 py-3 text-sm font-medium shadow-sm transition-all hover:scale-105 hover:bg-slate-50 hover:shadow-lg dark:border-slate-800 dark:hover:bg-slate-900"
 				>
 					Learn More
@@ -93,7 +113,7 @@
 		</div>
 
 		<button
-			on:click={() => smoothScrollTo('features')}
+			onclick={() => smoothScrollTo('features')}
 			class="group mt-16 text-muted-foreground transition-colors hover:text-foreground md:mt-24"
 		>
 			<MoveDown class="size-16 animate-bounce rounded-full border border-slate-200 p-4 shadow-lg transition-all hover:border-primary hover:text-primary dark:border-slate-300 group-hover:dark:border-slate-400" />
