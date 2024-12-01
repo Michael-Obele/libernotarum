@@ -48,7 +48,6 @@
     "lucide-svelte": "^0.462.0",
     "mode-watcher": "^0.4.1",
     "prisma": "^5.19.1",
-    "svelte-markdown": "^0.4.1",
     "tailwind-merge": "^2.5.5",
     "tailwind-variants": "^0.3.0"
   }
