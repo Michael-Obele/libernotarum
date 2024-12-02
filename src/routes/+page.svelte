@@ -54,7 +54,7 @@
 
 
 	<!-- Hero Section -->
-	<main class="relative mx-auto mt-3 min-h-screen max-w-7xl px-6 text-center md:px-8">
+	<main class="relative mx-auto my-3 min-h-screen max-w-7xl px-6 text-center md:px-8">
 		<!-- Announcement Banner -->
 		<div class="backdrop-filter-[12px] animate-fade-in group mt-5 inline-flex h-7 items-center justify-between gap-1 rounded-full border border-primary/10 bg-primary/5 px-3 text-xs text-primary transition-all ease-in hover:cursor-pointer hover:bg-primary/10 dark:border-primary/60">
 			<span>✨ Welcome to the future of note-taking</span>
@@ -63,7 +63,7 @@
 		<!-- Hero Content -->
 		<div class="mt-8 space-y-8">
 			<div class="flex items-center justify-center">
-				<span class="md:hidden">
+				<span class="h-[40vh] md:hidden">
 					<Logo />
 				</span>
 				<span class="hidden md:block">

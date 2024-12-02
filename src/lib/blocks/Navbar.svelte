@@ -4,16 +4,18 @@
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import {  Menu } from 'lucide-svelte';
 	import NavAddOns from './NavAddOns.svelte';
+	import { beforeNavigate } from '$app/navigation';
+	import { navItems } from '$lib';
 	interface Props {
 		children?: import('svelte').Snippet;
 	}
 
 	let { children }: Props = $props();
 
+	let show = $state(false);
 	// Reactive statement to determine if the current route matches the item
 	let isActive = (item: string) => {
 		const routeId = $page.url.pathname;
-	
 		// Special case for the home page
 		if (item === 'Home' && routeId === '/') {
 			return true;
@@ -23,13 +25,13 @@
 		}
 	};
 
-	let show = $state(false);
-	const navItems = [
-		{ name: 'Home', path: '/' },
-		{ name: 'App', path: '/app' },
-		{ name: 'FAQ', path: '/faq' },
-		{ name: 'About', path: '/about' }
-	];
+	// Reset `show` when navigating
+	beforeNavigate(() => {
+		show = false;
+	});
+
+
+	
 	
 
 	// No need for a separate href function, use item directly
