@@ -2,7 +2,7 @@
 	import NavAddOns from '$lib/blocks/NavAddOns.svelte';
 	import Footer from './Footer.svelte';
 	import type { PageData } from './$types';
-	import Navbar from '$lib/blocks/navbar.svelte';
+	import Navbar from '$lib/blocks/Navbar.svelte';
 	import TextSection from './TextSection.svelte';
 	import Logo from '$lib/logos/Logo.svelte';
 	import LogoLong from '$lib/logos/Logo-Long.svelte';
@@ -52,19 +52,6 @@
 	<link rel="canonical" href="https://libernotarum.tech/" />
 </svelte:head>
 
-<Navbar>
-	<div>
-		<!-- Empty Div for spacing -->
-	</div>
-	<a href="/app" class="flex items-center space-x-2">
-		<PenLine />
-		<h3 class="text-xl">Get Started</h3>
-	</a>
-
-	<div class="flex items-center space-x-3 md:order-3 md:mx-0 md:space-x-0">
-		<NavAddOns />
-	</div>
-</Navbar>
 
 	<!-- Hero Section -->
 	<main class="relative mx-auto mt-3 min-h-screen max-w-7xl px-6 text-center md:px-8">

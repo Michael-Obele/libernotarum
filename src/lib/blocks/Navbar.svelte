@@ -11,9 +11,9 @@
 	let { children }: Props = $props();
 
 	// Reactive statement to determine if the current route matches the item
-	let isActive = $derived((item: string) => {
+	let isActive = (item: string) => {
 		const routeId = $page.url.pathname;
-		show = false;
+	
 		// Special case for the home page
 		if (item === 'Home' && routeId === '/') {
 			return true;
@@ -21,9 +21,15 @@
 			// Construct the expected route path for other items
 			return routeId === `/${item.toLowerCase()}`;
 		}
-	});
+	};
 
 	let show = $state(false);
+	const navItems = [
+		{ name: 'Home', path: '/' },
+		{ name: 'App', path: '/app' },
+		{ name: 'FAQ', path: '/faq' },
+		{ name: 'About', path: '/about' }
+	];
 	
 
 	// No need for a separate href function, use item directly
@@ -69,12 +75,12 @@
 				<ul
 					class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 md:dark:bg-gray-900 rtl:space-x-reverse"
 				>
-					{#each ['Home', 'App', 'FAQ', 'About'] as item}
+					{#each navItems as item}
 						<li>
 							<a
-								href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-								class={`${isActive(item) ? 'block rounded bg-red-700 px-3 py-2 text-white md:bg-transparent md:p-0 md:text-red-700 md:dark:text-red-500' : 'block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-red-700 md:dark:hover:bg-transparent md:dark:hover:text-red-500'}`}
-								aria-current={isActive(item) ? 'page' : undefined}>{item}</a
+								href={item.path}
+								class={`${isActive(item.name) ? 'block rounded bg-red-700 px-3 py-2 text-white md:bg-transparent md:p-0 md:text-red-700 md:dark:text-red-500' : 'block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-red-700 md:dark:hover:bg-transparent md:dark:hover:text-red-500'}`}
+								aria-current={isActive(item.name) ? 'page' : undefined}>{item.name}</a
 							>
 						</li>
 					{/each}

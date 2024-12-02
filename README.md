@@ -9,7 +9,7 @@
 
   [![Made with SvelteKit](https://img.shields.io/badge/Made%20with-SvelteKit-FF3E00.svg)](https://kit.svelte.dev/)
   [![Powered by Prisma](https://img.shields.io/badge/Powered%20by-Prisma-2D3748.svg)](https://www.prisma.io/)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 </div>
 
@@ -55,6 +55,6 @@ We welcome contributions! Whether it's bug fixes, feature additions, or document
 
 ## 📝 License
 
-MIT License - feel free to use this project however you'd like!
+GNU GPL v3 License - feel free to use this project however you'd like!
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b7b3ab7a-cbdf-4c19-b71b-93b3c876b945/deploy-status)](https://app.netlify.com/sites/libernotarum/deploys)
